@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=3 uid="uid://dy5noccfy1of"]
+
+[ext_resource type="Script" path="res://Scripts/Player_controller.gd" id="1_svdaj"]
+[ext_resource type="Texture2D" uid="uid://kj6thdloyhx3" path="res://UI/icon.svg" id="2_gmri6"]
+[ext_resource type="Script" path="res://Scripts/Touch_input_.gd" id="3_1oq0t"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m2lmi"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_jdxm4"]
+
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("touch_input", "camera")]
+script = ExtResource("1_svdaj")
+touch_input = NodePath("Touch_input")
+camera = NodePath("Camera3D")
+
+[node name="UI" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="Jump_button" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 256.0
+offset_bottom = 256.0
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="UI/Jump_button"]
+scale = Vector2(2, 2)
+texture_normal = ExtResource("2_gmri6")
+action = "jump"
+
+[node name="Run_button" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -256.0
+offset_bottom = 256.0
+grow_horizontal = 0
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="UI/Run_button"]
+scale = Vector2(2, 2)
+texture_normal = ExtResource("2_gmri6")
+action = "run"
+
+[node name="Touch_input" type="Node" parent="."]
+script = ExtResource("3_1oq0t")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_m2lmi")
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_jdxm4")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
