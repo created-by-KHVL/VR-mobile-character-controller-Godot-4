@@ -86,8 +86,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
 
 [node name="SubViewport" type="SubViewport" parent="."]
 
-[node name="VR_Camera" type="Camera3D" parent="SubViewport" node_paths=PackedStringArray("player_camera", "left_eye_control", "right_eye_control")]
+[node name="VR_Camera" type="Camera3D" parent="SubViewport" node_paths=PackedStringArray("player_camera", "left_eye_control", "right_eye_control", "subview_port")]
 script = ExtResource("2_egjiq")
 player_camera = NodePath("../../Player_camera")
 left_eye_control = NodePath("../../UI/Left_eye_control")
 right_eye_control = NodePath("../../UI/Right_eye_control")
+subview_port = NodePath("..")

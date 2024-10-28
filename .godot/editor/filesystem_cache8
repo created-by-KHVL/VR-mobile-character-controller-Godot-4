@@ -1,10 +1,10 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1712940814
+::res://::1730134837
 icon.svg::CompressedTexture2D::3046566525527262917::1712939864::1712939871::1::::<><>::
-::res://Scenes/::1712940396
-Environment.tscn::PackedScene::7762457741997083624::1712940368::0::1::::<><>::uid://comppjga1f528::::res://UI/UV_grid.jpg<>uid://cdo3wnnhj4rht::::res://Scenes/VR_Player.tscn
-Player.tscn::PackedScene::261957060630326553::1712940396::0::1::::<><>::res://Scripts/Player_controller.gd<>uid://kj6thdloyhx3::::res://UI/icon.svg<>res://Scripts/Touch_input_.gd
-VR_Player.tscn::PackedScene::5014049253337748829::1712940367::0::1::::<><>::res://Scripts/VR_player_controller.gd<>res://Scripts/VR_camera.gd
+::res://Scenes/::1713635922
+Environment.tscn::PackedScene::7762457741997083624::1713635922::0::1::::<><>::uid://comppjga1f528::::res://UI/UV_grid.jpg<>uid://dy5noccfy1of::::res://Scenes/Player.tscn
+Player.tscn::PackedScene::261957060630326553::1713635922::0::1::::<><>::res://Scripts/Player_controller.gd<>uid://kj6thdloyhx3::::res://UI/icon.svg<>res://Scripts/Touch_input_.gd
+VR_Player.tscn::PackedScene::5014049253337748829::1713635922::0::1::::<><>::res://Scripts/VR_player_controller.gd<>res://Scripts/VR_camera.gd
 ::res://Scripts/::1712940186
 Player_controller.gd::GDScript::-1::1712939768::0::1::::<>CharacterBody3D<>::
 Touch_input_.gd::GDScript::-1::1712939768::0::1::::<>Node<>::

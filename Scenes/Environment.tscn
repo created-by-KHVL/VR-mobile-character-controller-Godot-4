@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://diugsr52nfy21"]
 
 [ext_resource type="Texture2D" uid="uid://comppjga1f528" path="res://UI/UV_grid.jpg" id="1_mc2nx"]
-[ext_resource type="PackedScene" uid="uid://cdo3wnnhj4rht" path="res://Scenes/VR_Player.tscn" id="2_elbji"]
+[ext_resource type="PackedScene" uid="uid://cdo3wnnhj4rht" path="res://Scenes/VR_Player.tscn" id="2_tlwjk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8bh76"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -70,5 +70,5 @@ use_collision = true
 mesh = SubResource("BoxMesh_ynvh7")
 material = SubResource("StandardMaterial3D_bm1ex")
 
-[node name="Player" parent="." instance=ExtResource("2_elbji")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.343539, 0.484053, -0.616339)
+[node name="Player" parent="." instance=ExtResource("2_tlwjk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)

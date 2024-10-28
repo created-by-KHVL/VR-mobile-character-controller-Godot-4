@@ -3,10 +3,11 @@ extends CharacterBody3D
 @export var camera: Camera3D
 @export var speed: float = 4
 
+
 const JUMP_VELOCITY = 4.5
 
 var start_speed: float
-var start_camera_fov: int
+var start_camera_fov: float
 
 var is_jumping: bool = false
 var is_running: bool = false
