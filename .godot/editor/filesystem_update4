@@ -1,5 +1,6 @@
 res://Scenes/VR_Player.tscn
-res://Scripts/VR_camera.gd
+res://UI/Lens_barrel_distiortion.gdshader
 res://Scripts/VR_player_controller.gd
-res://Scenes/Player.tscn
+res://Scripts/VR_camera.gd
 res://Scenes/Environment.tscn
+res://Shaders/Lens_barrel_distiortion.gdshader

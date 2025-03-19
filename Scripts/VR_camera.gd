@@ -25,6 +25,6 @@ func _ready():
 	left_eye_control.set_position(Vector2(left_eye_position.x, half_screen_size.y))
 	right_eye_control.set_position(Vector2(right_eye_position.x, half_screen_size.y))
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	global_rotation = player_camera.global_rotation
 	global_position = player_camera.global_position

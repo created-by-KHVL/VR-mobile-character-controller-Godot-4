@@ -1,8 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://cdo3wnnhj4rht"]
+[gd_scene load_steps=12 format=3 uid="uid://cdo3wnnhj4rht"]
 
 [ext_resource type="Script" uid="uid://dwv0rbjb8ubvy" path="res://Scripts/VR_player_controller.gd" id="1_f5evh"]
 [ext_resource type="Script" uid="uid://c3725tpmd4w2p" path="res://Scripts/VR_camera.gd" id="2_egjiq"]
-[ext_resource type="Shader" uid="uid://botr4oijaimvf" path="res://UI/Lens_barrel_distiortion.gdshader" id="2_g0cep"]
+[ext_resource type="Shader" uid="uid://botr4oijaimvf" path="res://Shaders/Lens_barrel_distiortion.gdshader" id="2_g0cep"]
 
 [sub_resource type="Gradient" id="Gradient_as5k3"]
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
@@ -18,6 +18,11 @@ shader_parameter/distortion_radius = 1.0
 [sub_resource type="ViewportTexture" id="ViewportTexture_3wrse"]
 viewport_path = NodePath("SubViewport")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g0cep"]
+shader = ExtResource("2_g0cep")
+shader_parameter/distortion_strength = 0.5
+shader_parameter/distortion_radius = 1.0
+
 [sub_resource type="ViewportTexture" id="ViewportTexture_1j2yr"]
 viewport_path = NodePath("SubViewport")
 
@@ -25,7 +30,7 @@ viewport_path = NodePath("SubViewport")
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_jdxm4"]
 
-[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("camera")]
+[node name="VR_Player" type="CharacterBody3D" node_paths=PackedStringArray("camera")]
 script = ExtResource("1_f5evh")
 camera = NodePath("Player_camera")
 
@@ -77,6 +82,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="TextureRect" type="TextureRect" parent="UI/Right_eye_control"]
+material = SubResource("ShaderMaterial_g0cep")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

@@ -19,9 +19,8 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _ready():
 	start_speed = speed
-	start_camera_fov = camera.fov
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_pressed("run") and abs(input_direction) > Vector2.ZERO:
 		is_running = true
 	else:
@@ -49,14 +48,11 @@ func _physics_process(delta):
 	player_rotation()
 
 func player_movement():
-	var fov_change_speed: int = 2
 	if is_running:
 		var acceleration: int = 4
 		speed = start_speed + acceleration
-		camera.fov = move_toward(camera.fov, start_camera_fov + 15, fov_change_speed)
 	else:
 		speed = start_speed
-		camera.fov = move_toward(camera.fov, start_camera_fov, fov_change_speed)
 	
 	input_direction = Input.get_vector("move_left", "move_right", "move_forward", "move_back")
 	var direction = (transform.basis * Vector3(input_direction.x, 0, input_direction.y)).normalized()
