@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://dy5noccfy1of"]
 
-[ext_resource type="Script" path="res://Scripts/Player_controller.gd" id="1_svdaj"]
+[ext_resource type="Script" uid="uid://cvequi384w7lo" path="res://Scripts/Player_controller.gd" id="1_svdaj"]
 [ext_resource type="Texture2D" uid="uid://kj6thdloyhx3" path="res://UI/icon.svg" id="2_gmri6"]
-[ext_resource type="Script" path="res://Scripts/Touch_input_.gd" id="3_1oq0t"]
+[ext_resource type="Script" uid="uid://cy8u3y6ne63p7" path="res://Scripts/Touch_input_.gd" id="3_1oq0t"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m2lmi"]
 
