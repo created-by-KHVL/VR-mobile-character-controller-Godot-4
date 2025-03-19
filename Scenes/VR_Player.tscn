@@ -1,13 +1,19 @@
-[gd_scene load_steps=9 format=3 uid="uid://cdo3wnnhj4rht"]
+[gd_scene load_steps=11 format=3 uid="uid://cdo3wnnhj4rht"]
 
-[ext_resource type="Script" path="res://Scripts/VR_player_controller.gd" id="1_f5evh"]
-[ext_resource type="Script" path="res://Scripts/VR_camera.gd" id="2_egjiq"]
+[ext_resource type="Script" uid="uid://dwv0rbjb8ubvy" path="res://Scripts/VR_player_controller.gd" id="1_f5evh"]
+[ext_resource type="Script" uid="uid://c3725tpmd4w2p" path="res://Scripts/VR_camera.gd" id="2_egjiq"]
+[ext_resource type="Shader" uid="uid://botr4oijaimvf" path="res://UI/Lens_barrel_distiortion.gdshader" id="2_g0cep"]
 
 [sub_resource type="Gradient" id="Gradient_as5k3"]
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_aoa37"]
 gradient = SubResource("Gradient_as5k3")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qs53n"]
+shader = ExtResource("2_g0cep")
+shader_parameter/distortion_strength = 0.5
+shader_parameter/distortion_radius = 1.0
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_3wrse"]
 viewport_path = NodePath("SubViewport")
@@ -50,10 +56,15 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="TextureRect" type="TextureRect" parent="UI/Left_eye_control"]
+material = SubResource("ShaderMaterial_qs53n")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -236.0
+offset_top = -236.0
+offset_right = 236.0
+offset_bottom = 236.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(256, 256)
@@ -70,6 +81,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -236.0
+offset_top = -236.0
+offset_right = 236.0
+offset_bottom = 236.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(256, 256)
@@ -87,6 +102,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
 [node name="SubViewport" type="SubViewport" parent="."]
 
 [node name="VR_Camera" type="Camera3D" parent="SubViewport" node_paths=PackedStringArray("player_camera", "left_eye_control", "right_eye_control", "subview_port")]
+fov = 37.8493
 script = ExtResource("2_egjiq")
 player_camera = NodePath("../../Player_camera")
 left_eye_control = NodePath("../../UI/Left_eye_control")
